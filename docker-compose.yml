@@ -1,0 +1,32 @@
+services:
+  orders:
+    build: ./orders-service
+    ports: ["8080:8080"]
+
+  search:
+    build: ./search-service
+    ports: ["8000:8000"]
+    environment:
+      ORDERS_URL: http://orders:8080
+    depends_on: [orders]
+
+  image:
+    build: ./image-service
+    ports: ["9000:9000"]
+
+  storefront:
+    build: ./storefront
+    ports: ["5173:5173"]
+    environment:
+      ORDERS_URL: http://orders:8080
+      SEARCH_URL: http://search:8000
+      IMAGE_URL: http://image:9000
+    depends_on: [orders, search, image]
+
+  admin:
+    build: ./admin-panel
+    ports: ["4000:4000"]
+    environment:
+      ORDERS_URL: http://orders:8080
+      SEARCH_URL: http://search:8000
+    depends_on: [orders, search]
