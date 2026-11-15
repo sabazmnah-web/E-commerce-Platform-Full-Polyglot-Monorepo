@@ -1,0 +1,25 @@
+# Node (JavaScript & TypeScript)
+node_modules/
+dist/
+*.log
+
+# Java
+target/
+*.class
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# C++
+build/
+*.o
+*.a
+*.so
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
