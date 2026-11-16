@@ -37,7 +37,6 @@ async def recommend(product_id: int) -> dict:
     orders = await _fetch_orders()
     recs = Recommender(orders).for_product(product_id)
     if not recs:
-        # cold start: fall back to same-category items
         target = next((p for p in PRODUCTS if p["id"] == product_id), None)
         if target is None:
             raise HTTPException(status_code=404, detail="unknown product")
@@ -56,5 +55,4 @@ async def _fetch_orders() -> list[dict]:
             resp.raise_for_status()
             return resp.json()
     except Exception:
-        # Degrade gracefully — recommendations are non-critical.
         return []
