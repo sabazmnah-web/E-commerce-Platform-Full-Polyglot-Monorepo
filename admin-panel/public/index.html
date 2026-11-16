@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Shop Admin</h1>
+      <button id="refresh">Refresh</button>
+    </header>
+
+    <section>
+      <h2>Inventory</h2>
+      <table id="inventory">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Price</th><th>Stock</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Orders</h2>
+      <table id="orders">
+        <thead>
+          <tr><th>ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Search preview</h2>
+      <form id="search-form">
+        <input id="search-input" placeholder="e.g. wireless audio" />
+        <button type="submit">Search</button>
+      </form>
+      <pre id="search-output"></pre>
+    </section>
+
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>
