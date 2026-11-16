@@ -21,3 +21,4 @@ PRODUCTS = [
      "description": "1080p webcam with auto framing and dual microphones"},
     {"id": 8, "name": "Cascade Speaker",    "category": "audio",    "price": 149.00,
      "description": "Portable bluetooth speaker with 20 hour battery"},
+]
